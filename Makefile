@@ -44,4 +44,4 @@ rm:
 enter:
 	sudo docker exec -it $(shell cat $(container_id_file)) bash
 	
-.PHONY: build buildrm create stop rm
+.PHONY: build buildrm create start stop rm enter

@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ros:melodic-ros-base
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
