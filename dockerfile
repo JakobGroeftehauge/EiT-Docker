@@ -21,7 +21,7 @@ RUN useradd -m user -p "$(openssl passwd -1 user)"
 RUN usermod -aG sudo user 
 
 # Extra
-RUN apt update && apt install -y vim \
+RUN apt update && apt install -y nano \
                                  ssh \
                                  openssh* \
                                  sudo \
