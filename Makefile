@@ -2,7 +2,7 @@ image = eit-robot
 container_id_file = ./container_id
 
 build:
-	git clone git@github.com:kulus96/EiT.git || true
+	git clone git@github.com:kulus96/EiT-ROS.git || true
 	sudo docker build -t $(image) .
 	
 buildrm:
