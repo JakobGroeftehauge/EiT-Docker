@@ -12,7 +12,7 @@ create:
 	xhost local:docker
 	sudo docker run -it \
 		--cidfile $(container_id_file) \
-		--name="robwork" --network="host" \
+		--name="ROS-eit-sys" --network="host" \
 		--device /dev/dri:/dev/dri \
 		-e DISPLAY \
 		-v $(shell pwd)/EiT:/home/user/EiT \
