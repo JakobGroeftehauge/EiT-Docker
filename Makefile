@@ -13,9 +13,10 @@ create:
 	sudo docker run -it \
 		--cidfile $(container_id_file) \
 		--name="ROS-eit-sys" --network="host" \
-		--device /dev/dri:/dev/dri \
+		--privileged --cap-add=ALL \
 		-e DISPLAY \
-		-v $(shell pwd)/EiT:/home/user/EiT \
+		-v $(shell pwd)/EiT-ROS:/home/user/EiT-ROS \
+		-v /dev/bus/:/dev/bus \
 		-e QT_X11_NO_MITSHM=1 \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-v ~/.Xauthority:/root/.Xauthority \
