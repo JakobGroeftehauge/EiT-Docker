@@ -34,6 +34,8 @@ RUN rosdep update
 RUN apt install ros-melodic-rgbd-launch ros-melodic-openni2-camera ros-melodic-openni2-launch -y
 RUN apt install ros-melodic-image-transport
 RUN apt-get install ros-melodic-cv-bridge -y
+RUN apt install ros-melodic-rqt-reconfigure
+
 
 RUN add-apt-repository ppa:sdurobotics/ur-rtde
 RUN apt-get update
