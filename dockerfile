@@ -36,6 +36,7 @@ RUN apt install ros-melodic-image-transport ros-melodic-tf2-tools ros-melodic-tf
 RUN apt install ros-melodic-cv-bridge -y
 RUN apt install ros-melodic-rqt-reconfigure -y
 
+
 RUN add-apt-repository ppa:sdurobotics/ur-rtde
 RUN apt-get update
 RUN apt install librtde librtde-dev
