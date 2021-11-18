@@ -32,8 +32,9 @@ RUN rosdep update
 
 # Install ROS-Packages 
 RUN apt install ros-melodic-rgbd-launch ros-melodic-openni2-camera ros-melodic-openni2-launch -y
-RUN apt install ros-melodic-image-transport
-RUN apt-get install ros-melodic-cv-bridge -y
+RUN apt install ros-melodic-image-transport ros-melodic-tf2-tools ros-melodic-tf -y
+RUN apt install ros-melodic-cv-bridge -y
+RUN apt install ros-melodic-rqt-reconfigure -y
 
 RUN add-apt-repository ppa:sdurobotics/ur-rtde
 RUN apt-get update
@@ -41,6 +42,11 @@ RUN apt install librtde librtde-dev
 
 RUN pip install --upgrade pip
 RUN pip install ur_rtde
+
+RUN cd /home/user/ && \
+		wget https://www.coppeliarobotics.com/files/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz && \
+		tar -xf CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz && \
+		rm CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz
 
 # Install openssl
 RUN wget https://www.openssl.org/source/openssl-1.0.2g.tar.gz -O - | tar -xz
@@ -58,6 +64,7 @@ RUN apt update && apt install -y nano \
                                  sudo \
                                  gdb \
                && rm -rf /var/lib/apt/lists/*
+
 
 
 # Setting user and the workdir
