@@ -44,10 +44,6 @@ RUN apt install librtde librtde-dev
 RUN pip install --upgrade pip
 RUN pip install ur_rtde
 
-RUN cd /home/user/ && \
-		wget https://www.coppeliarobotics.com/files/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz && \
-		tar -xf CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz && \
-		rm CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz
 
 # Install openssl
 RUN wget https://www.openssl.org/source/openssl-1.0.2g.tar.gz -O - | tar -xz
@@ -71,3 +67,8 @@ RUN apt update && apt install -y nano \
 # Setting user and the workdir
 USER user
 WORKDIR /home/user 
+
+RUN cd /home/user/ && \
+		wget https://www.coppeliarobotics.com/files/CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz && \
+		tar -xf CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz && \
+		rm CoppeliaSim_Edu_V4_2_0_Ubuntu18_04.tar.xz
